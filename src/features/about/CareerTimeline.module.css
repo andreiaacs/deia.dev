@@ -1,0 +1,202 @@
+.section {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.title {
+  font-size: var(--text-3xl);
+}
+
+.summary {
+  margin-top: var(--space-1);
+  color: var(--color-text-muted);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.filter {
+  min-height: 40px;
+  padding: 0 var(--space-5);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.filter:hover {
+  border-color: var(--color-primary);
+}
+
+.filterActive {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: #fff;
+}
+
+/* Linha do tempo horizontal (desktop) */
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: var(--space-5) var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.icon {
+  margin-left: var(--space-5);
+}
+
+.periodRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.dot {
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px var(--color-bg);
+}
+
+.dot-purple {
+  background: #b98cff;
+}
+.dot-blue {
+  background: #5ba4ff;
+}
+.dot-pink {
+  background: #ff8fc7;
+}
+.dot-green {
+  background: #6fd36b;
+}
+.dot-lime {
+  background: #b6e33a;
+}
+.dot-yellow {
+  background: #f5c400;
+}
+
+.period {
+  font-size: var(--text-md);
+  font-weight: 800;
+  color: var(--color-primary);
+  white-space: nowrap;
+}
+
+.line {
+  position: relative;
+  flex: 1;
+  height: 2px;
+  margin-right: calc(-1 * var(--space-4));
+  background: #d9ccff;
+}
+
+.item:last-child .line {
+  margin-right: 0;
+}
+
+.lineArrow {
+  position: absolute;
+  right: -4px;
+  top: 50%;
+  color: var(--color-primary);
+  transform: translateY(-50%);
+}
+
+.card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  font-size: var(--text-sm);
+  line-height: 1.45;
+}
+
+.cardTitle {
+  font-size: var(--text-lg);
+}
+
+.subtitle {
+  color: var(--color-text);
+}
+
+.description {
+  color: var(--color-text-muted);
+}
+
+.tags {
+  margin-top: auto;
+  padding-top: var(--space-2);
+}
+
+/* Linha do tempo vertical (celular) */
+@media (max-width: 760px) {
+  .timeline {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-5);
+  }
+
+  .item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 52px minmax(0, 1fr);
+    column-gap: var(--space-4);
+    row-gap: var(--space-2);
+  }
+
+  .item::before {
+    content: '';
+    position: absolute;
+    left: 25px;
+    top: 56px;
+    bottom: calc(-1 * var(--space-5));
+    width: 2px;
+    background: #d9ccff;
+  }
+
+  .item:last-child::before {
+    display: none;
+  }
+
+  .icon {
+    grid-row: 1 / span 2;
+    margin-left: 0;
+  }
+
+  .periodRow,
+  .card {
+    grid-column: 2;
+  }
+
+  .line {
+    display: none;
+  }
+}

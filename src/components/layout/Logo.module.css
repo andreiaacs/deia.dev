@@ -1,0 +1,19 @@
+.logo {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--color-ink);
+}
+
+.logo[data-inverted] {
+  color: #fff;
+}
+
+.accent {
+  color: var(--color-primary);
+}
+
+.logo[data-inverted] .accent {
+  color: var(--color-accent);
+}

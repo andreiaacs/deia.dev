@@ -1,0 +1,212 @@
+.player {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr);
+  gap: var(--space-5);
+  align-items: start;
+  border-radius: var(--radius-xl);
+  outline-offset: 4px;
+}
+
+.stage {
+  display: grid;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+}
+
+.stageHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.stageTitle {
+  font-size: var(--text-xl);
+}
+
+.counters {
+  display: flex;
+  gap: var(--space-2);
+  margin: 0;
+}
+
+.counters div {
+  display: grid;
+  min-width: 96px;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-md);
+  background: var(--color-primary-softer);
+  text-align: center;
+}
+
+.counters dt {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.counters dd {
+  margin: 0;
+  font-size: var(--text-lg);
+  font-weight: 800;
+  color: var(--color-primary);
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 52px;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  background: #fff8db;
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.stepCount {
+  flex-shrink: 0;
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+/* Controles */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3) var(--space-4);
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.buttons button {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 50%;
+  background: var(--color-surface);
+  color: var(--color-ink);
+  cursor: pointer;
+}
+
+.buttons button:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.buttons button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.buttons .play {
+  width: 48px;
+  height: 48px;
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: #fff;
+  box-shadow: 0 6px 16px -8px rgb(111 54 251 / 0.8);
+}
+
+.buttons .play:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+  color: #fff;
+}
+
+.scrubber {
+  flex: 1 1 160px;
+  accent-color: var(--color-primary);
+}
+
+.speed {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.speed select {
+  min-height: 34px;
+  padding: 0 var(--space-2);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  font: inherit;
+  color: var(--color-text);
+}
+
+/* Lado do código */
+.side {
+  display: grid;
+  gap: var(--space-4);
+  position: sticky;
+  top: calc(var(--header-height) + var(--space-4));
+}
+
+.vars {
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+.vars h4 {
+  margin-bottom: var(--space-2);
+  font-size: var(--text-sm);
+}
+
+.vars ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.vars code {
+  display: inline-block;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  background: var(--color-primary-softer);
+  font-size: var(--text-xs);
+  color: var(--color-text);
+}
+
+.vars strong {
+  color: var(--color-primary);
+}
+
+.vars p {
+  font-size: var(--text-xs);
+  color: var(--color-text-subtle);
+}
+
+@media (max-width: 1100px) {
+  .player {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .side {
+    position: static;
+  }
+}

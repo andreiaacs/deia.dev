@@ -1,0 +1,24 @@
+.skipLink {
+  position: absolute;
+  left: var(--space-4);
+  top: -100px;
+  z-index: 100;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-pill);
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 700;
+}
+
+.skipLink:focus {
+  top: var(--space-3);
+}
+
+.main {
+  min-height: 60vh;
+  outline: none;
+}
+
+.loading {
+  min-height: 60vh;
+}

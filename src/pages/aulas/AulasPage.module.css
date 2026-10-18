@@ -1,0 +1,78 @@
+.page {
+  padding-bottom: var(--space-8);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-6);
+  padding-block: var(--space-8) var(--space-6);
+}
+
+.heroText {
+  display: grid;
+  gap: var(--space-4);
+  justify-items: start;
+}
+
+.title {
+  font-size: var(--text-display);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  max-width: 13ch;
+}
+
+.highlight {
+  position: relative;
+  color: var(--color-primary);
+  white-space: nowrap;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0.3em;
+  bottom: -0.08em;
+  height: 0.14em;
+  border-radius: 999px;
+  background: var(--color-accent);
+  transform: rotate(-1.5deg);
+}
+
+.lead {
+  max-width: 54ch;
+  color: var(--color-text-muted);
+}
+
+.heroArt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+.heroNote {
+  max-width: 11ch;
+}
+
+.heroArt img {
+  width: clamp(110px, 14vw, 170px);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr));
+  gap: var(--space-5);
+}
+
+@media (max-width: 760px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .heroArt {
+    justify-content: flex-start;
+  }
+}

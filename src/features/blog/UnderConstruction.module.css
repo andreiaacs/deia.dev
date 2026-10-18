@@ -1,0 +1,144 @@
+.scene {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-10);
+}
+
+.art {
+  width: 100%;
+  max-width: 520px;
+  justify-self: center;
+}
+
+.text {
+  display: grid;
+  gap: var(--space-5);
+  justify-items: start;
+  font-family: var(--font-hand);
+  color: var(--color-ink);
+}
+
+.title {
+  position: relative;
+  font-family: var(--font-hand);
+  font-size: clamp(3rem, 2rem + 4vw, 5rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+/* Sublinhado lilás à mão */
+.title::after {
+  content: '';
+  position: absolute;
+  left: 4%;
+  right: 6%;
+  bottom: -0.12em;
+  height: 0.16em;
+  border-radius: 999px;
+  background: #d9ccff;
+  transform: rotate(-1.5deg);
+  z-index: -1;
+}
+
+.body {
+  max-width: 30ch;
+  font-size: 1.6rem;
+  line-height: 1.3;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: min(100%, 380px);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.track {
+  flex: 1;
+  height: 26px;
+  padding: 4px;
+  border: 2.5px solid var(--color-ink);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+}
+
+.fill {
+  height: 100%;
+  border-radius: inherit;
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--color-primary) 0 10px,
+    #8f5cff 10px 20px
+  );
+}
+
+/* Post-it lilás com links */
+.note {
+  position: relative;
+  display: grid;
+  gap: var(--space-3);
+  max-width: 300px;
+  margin-top: var(--space-4);
+  padding: var(--space-6) var(--space-5) var(--space-5);
+  background: #e9defe;
+  box-shadow: var(--shadow-md);
+  transform: rotate(-4deg);
+  font-size: 1.45rem;
+  line-height: 1.2;
+}
+
+.tape {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  width: 72px;
+  height: 22px;
+  background: rgb(212 245 107 / 0.85);
+  transform: translateX(-50%) rotate(3deg);
+}
+
+.note ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.note a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.note a:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+@media (max-width: 860px) {
+  .scene {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-6);
+  }
+
+  .text {
+    order: -1;
+  }
+
+  .art {
+    max-width: 380px;
+  }
+}

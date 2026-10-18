@@ -1,0 +1,155 @@
+/* Estilos de layout compartilhados pelas páginas. */
+
+.page {
+  padding-bottom: var(--space-8);
+}
+
+.stack {
+  display: grid;
+  gap: var(--space-5);
+}
+
+/* Linhas do portfólio */
+.rowProjects {
+  display: grid;
+  grid-template-columns: minmax(0, 2.7fr) minmax(0, 1.1fr) minmax(0, 0.95fr);
+  gap: var(--space-5);
+  align-items: stretch;
+}
+
+.rowAbout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.75fr) minmax(0, 1.05fr) minmax(0, 1.05fr);
+  gap: var(--space-5);
+  align-items: stretch;
+}
+
+.rowProjectsCompact {
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+}
+
+@media (max-width: 1240px) {
+  .rowProjects {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .rowProjects > :first-child {
+    grid-column: 1 / -1;
+  }
+
+  .rowAbout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .rowAbout > :first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 1240px) {
+  .rowProjectsCompact > :first-child {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 760px) {
+  .rowProjects,
+  .rowAbout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Cabeçalho simples de página */
+.pageHeader {
+  display: grid;
+  gap: var(--space-3);
+  justify-items: start;
+  padding-block: var(--space-8) var(--space-6);
+  max-width: 720px;
+}
+
+.pageTitle {
+  font-size: var(--text-3xl);
+}
+
+.pageTitle em {
+  font-style: normal;
+  color: var(--color-primary);
+}
+
+.lead {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+}
+
+.sectionGap {
+  margin-top: var(--space-12);
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr));
+  gap: var(--space-5);
+}
+
+/* Post do blog */
+.article {
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+.articleMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.postCard {
+  display: grid;
+  gap: var(--space-3);
+  position: relative;
+}
+
+.postCard h2,
+.postCard h3 {
+  font-size: var(--text-xl);
+}
+
+.postCard a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.postCard p {
+  color: var(--color-text-muted);
+}
+
+/* Contato */
+.contactGrid {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+  gap: var(--space-4);
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.contactItem strong {
+  display: block;
+}
+
+.contactItem span {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  word-break: break-word;
+}

@@ -1,0 +1,28 @@
+.page {
+  display: grid;
+  gap: var(--space-10);
+  padding-bottom: var(--space-8);
+}
+
+.highlights {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr) minmax(0, 1.05fr);
+  gap: var(--space-5);
+  align-items: stretch;
+}
+
+@media (max-width: 1180px) {
+  .highlights {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .highlights > :first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 760px) {
+  .highlights {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

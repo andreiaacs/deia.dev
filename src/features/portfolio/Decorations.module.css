@@ -1,0 +1,83 @@
+.note {
+  position: relative;
+  display: grid;
+  padding: var(--space-6) var(--space-5);
+  background: var(--color-accent);
+  font-family: var(--font-hand);
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  transform: rotate(-7deg);
+  box-shadow: var(--shadow-md);
+}
+
+.noteLilac {
+  background: #e4d8ff;
+  font-size: 1.3rem;
+  transform: rotate(-9deg);
+}
+
+.clip {
+  position: absolute;
+  top: -14px;
+  right: 22px;
+  width: 14px;
+  height: 36px;
+  border: 3px solid var(--color-ink);
+  border-radius: 8px;
+}
+
+.noteHeart {
+  justify-self: end;
+}
+
+.code {
+  padding: var(--space-4) var(--space-5) var(--space-5);
+  border-radius: var(--radius-lg);
+  background: var(--color-ink);
+  color: #b9b6d3;
+  box-shadow: var(--shadow-lg);
+}
+
+.dots {
+  display: flex;
+  gap: 6px;
+  margin-bottom: var(--space-3);
+}
+
+.dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ff5f57;
+}
+
+.dots span:nth-child(2) {
+  background: #febc2e;
+}
+
+.dots span:nth-child(3) {
+  background: #28c840;
+}
+
+.code pre {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.8;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+.kw {
+  color: var(--code-keyword);
+}
+
+.fn {
+  color: var(--code-function);
+}
+
+.call {
+  color: var(--code-keyword);
+}

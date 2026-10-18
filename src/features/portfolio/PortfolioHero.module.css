@@ -1,0 +1,123 @@
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.3fr) minmax(0, 0.78fr) minmax(0, 0.68fr);
+  grid-template-areas: 'text portrait stats decor';
+  align-items: center;
+  gap: var(--space-5);
+  padding-block: var(--space-6) var(--space-10);
+}
+
+.text {
+  grid-area: text;
+  display: grid;
+  gap: var(--space-5);
+  min-width: 0;
+}
+
+.text > :first-child,
+.actions,
+.signature {
+  justify-self: start;
+}
+
+.title {
+  font-size: var(--text-display);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+
+.title em {
+  font-style: normal;
+  color: var(--color-primary);
+}
+
+.intro {
+  display: grid;
+  gap: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.signature {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.signatureIcon {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background: var(--color-ink);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  transform: rotate(-8deg);
+}
+
+.portrait {
+  grid-area: portrait;
+  position: relative;
+  margin: 0;
+}
+
+.portrait img {
+  width: 100%;
+}
+
+/* Frase manuscrita no canto da ilustração, como no protótipo. */
+.portraitNote {
+  position: absolute;
+  top: -9%;
+  right: -2%;
+  color: var(--color-ink);
+}
+
+.stats {
+  grid-area: stats;
+}
+
+.decor {
+  grid-area: decor;
+  display: grid;
+  gap: var(--space-8);
+}
+
+@media (max-width: 1240px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) minmax(0, 0.85fr);
+    grid-template-areas: 'text portrait stats';
+  }
+
+  .decor {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas:
+      'text portrait'
+      'stats stats';
+  }
+}
+
+@media (max-width: 720px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      'text'
+      'portrait'
+      'stats';
+    padding-top: var(--space-4);
+  }
+}

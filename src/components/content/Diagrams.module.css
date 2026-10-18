@@ -1,0 +1,139 @@
+.figure {
+  margin: 0;
+  padding: var(--space-6) var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-muted);
+  overflow-x: auto;
+}
+
+.figure figcaption {
+  margin-top: var(--space-3);
+  text-align: center;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+/* Lista encadeada */
+.linked {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: max-content;
+  margin-inline: auto;
+}
+
+.node {
+  display: inline-grid;
+  grid-template-columns: auto 18px;
+  border: 2px solid var(--color-ink);
+  border-radius: var(--radius-sm);
+  background: var(--color-accent);
+  font-weight: 700;
+  box-shadow: 3px 3px 0 var(--color-ink);
+}
+
+.nodeValue {
+  padding: var(--space-2) var(--space-4);
+  border-right: 2px solid var(--color-ink);
+}
+
+.nodePointer {
+  position: relative;
+}
+
+.nodePointer::after {
+  content: '';
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-ink);
+  transform: translate(-50%, -50%);
+}
+
+.arrow {
+  position: relative;
+  width: 36px;
+  height: 2px;
+  background: var(--color-ink);
+}
+
+.arrow::after {
+  content: '';
+  position: absolute;
+  right: -1px;
+  top: 50%;
+  border: 6px solid transparent;
+  border-left: 8px solid var(--color-ink);
+  border-right: 0;
+  transform: translateY(-50%);
+}
+
+.none {
+  margin-left: var(--space-2);
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+/* Pilha */
+.stack {
+  display: grid;
+  justify-content: center;
+  gap: 6px;
+}
+
+.stackItem {
+  position: relative;
+  width: 140px;
+  padding: var(--space-2);
+  border: 2px solid var(--color-ink);
+  border-radius: var(--radius-sm);
+  background: var(--tone-purple-bg);
+  text-align: center;
+  font-weight: 700;
+}
+
+.stackItem:first-child {
+  background: var(--color-accent);
+}
+
+.stackItem .label {
+  position: absolute;
+  left: calc(100% + var(--space-3));
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+}
+
+/* Fila */
+.queue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: max-content;
+  margin-inline: auto;
+}
+
+.queueItem {
+  min-width: 52px;
+  padding: var(--space-2) var(--space-3);
+  border: 2px solid var(--color-ink);
+  border-radius: var(--radius-sm);
+  background: var(--tone-blue-bg);
+  text-align: center;
+  font-weight: 700;
+}
+
+.queueItem:first-of-type {
+  background: var(--color-accent);
+}
+
+.label {
+  font-family: var(--font-hand);
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  padding-inline: var(--space-2);
+}
