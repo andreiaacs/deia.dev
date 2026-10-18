@@ -1,5 +1,5 @@
 import type { IconName } from '@/components/ui/Icon';
-import type { CareerCategory, CareerItem, Tone } from './types';
+import type { CareerItem, Tone } from './types';
 
 /**
  * Dados pessoais exibidos no site.
@@ -63,91 +63,176 @@ export const aboutAreas: Array<{ icon: IconName; tone: Tone; label: string }> = 
   { icon: 'heart', tone: 'yellow', label: 'Comunidade' },
 ];
 
-export const careerFilters: Array<{ id: 'todos' | CareerCategory; label: string }> = [
-  { id: 'todos', label: 'Visão geral' },
-  { id: 'experiencia', label: 'Experiência profissional' },
-  { id: 'formacao', label: 'Formação' },
-  { id: 'professora', label: 'Atuação como professora' },
-];
-
-/** Trajetória em ordem cronológica. */
+/** Trajetória em ordem cronológica, conforme o currículo. */
 export const career: CareerItem[] = [
   {
     period: '2010 – 2015',
     title: 'Graduação',
     subtitle: 'Engenharia de Computação · UTFPR',
-    description: [
-      'Base sólida em programação, algoritmos e sistemas. Aqui começou minha paixão por resolver problemas com código.',
-    ],
+    description: ['Bacharelado em Engenharia de Computação pela Universidade Tecnológica Federal do Paraná.'],
     tags: ['Programação', 'Algoritmos', 'Sistemas'],
     icon: 'graduation',
     tone: 'purple',
-    categories: ['formacao'],
     featured: true,
   },
   {
-    period: '2015 – 2017',
-    title: 'Desenvolvedora',
+    period: '2014 – 2015',
+    title: 'Iniciação científica',
+    subtitle: 'Bolsista PIBIC · UTFPR',
     description: [
-      'Primeiras experiências profissionais com desenvolvimento de software e participação em projetos de diferentes áreas.',
+      'Desenvolvimento de uma ferramenta para automatizar a implementação e a gestão de projetos, métricas e estimativas de software no Astah.',
     ],
-    tags: ['Python', 'Java', 'Web', 'Boas práticas'],
+    tags: ['Pesquisa', 'Engenharia de Software'],
+    icon: 'flask',
+    tone: 'pink',
+  },
+  {
+    period: '2016 – 2017',
+    title: 'Desenvolvedora Trainee',
+    subtitle: 'DSIN',
+    description: [
+      'Desenvolvimento e manutenção de aplicações de gestão de trânsito para desktop e web.',
+    ],
+    tags: ['Delphi', 'PHP', 'JavaScript', 'Firebird'],
     icon: 'laptop',
     tone: 'blue',
-    categories: ['experiencia'],
   },
   {
     period: '2017 – 2019',
     title: 'Mestrado',
-    subtitle: 'Engenharia de Sistemas Computacionais · EESC/USP',
+    subtitle: 'Mestre em Ciências · EESC/USP',
     description: [
-      'Pesquisa, aprendizado avançado e uma visão mais profunda da tecnologia e seus impactos.',
+      'Bolsista CAPES. Pesquisa e desenvolvimento de um aplicativo mobile para auxiliar no diagnóstico de retinopatia diabética usando deep learning.',
     ],
-    tags: ['Pesquisa', 'Dados', 'IA'],
-    icon: 'users',
+    tags: ['Pesquisa', 'Deep Learning', 'Mobile'],
+    icon: 'brain',
     tone: 'pink',
-    categories: ['formacao'],
     featured: true,
   },
   {
-    period: '2019 – 2023',
-    title: 'Desenvolvedora Sr.',
+    period: 'abr – jun 2019',
+    title: 'Desenvolvedora de Sistemas',
+    subtitle: 'Almoço Grátis',
+    description: ['Desenvolvimento e manutenção de sistema web.'],
+    tags: ['PHP', 'JavaScript', 'MySQL'],
+    icon: 'code',
+    tone: 'yellow',
+  },
+  {
+    period: '2019 – 2021',
+    title: 'Analista Pleno e Sênior',
+    subtitle: 'Accenture',
     description: [
-      'Crescimento técnico em diferentes empresas e produtos.',
-      'Atuação em microsserviços, cloud, integrações e soluções de alta escala.',
+      'Modernização de caixas automáticos (ATM) de Cobol para Angular, convivendo com o mainframe.',
+      'Bibliotecas de componentes para microfrontends, Dealing Panel de câmbio e treinamento de novos integrantes do time.',
     ],
-    tags: ['Java', 'AWS', 'Arquitetura', 'Microsserviços'],
+    tags: ['Angular', 'Microfrontends', 'CI/CD', 'Jasmine'],
     icon: 'rocket',
     tone: 'blue',
-    categories: ['experiencia'],
     featured: true,
   },
   {
-    period: '2023 – atual',
+    period: '2021 – 2022',
+    title: 'Analista de Engenharia de TI Pleno',
+    subtitle: 'Banco Itaú',
+    description: [
+      'Modernização de sistemas legados com microfrontends em Angular, testes com Jest e migração do código e das pipelines para GitHub e GitHub Actions.',
+    ],
+    tags: ['Angular', 'Jest', 'GitHub Actions'],
+    icon: 'layers',
+    tone: 'green',
+  },
+  {
+    period: '2022 – atual',
     title: 'Tech Lead',
     subtitle: 'Banco Itaú',
     description: [
-      'Liderança técnica, gestão de releases, discovery, métricas, processos e modernização de preços. Time, pessoas e impacto em escala.',
+      'Liderança técnica de time multidisciplinar, arquitetura de soluções distribuídas na AWS, planejamento de releases e acompanhamento de indicadores de modernização, saúde e segurança do produto.',
     ],
-    tags: ['Liderança', 'Arquitetura', 'AWS', 'Produto'],
-    icon: 'building',
+    tags: ['Liderança', 'AWS', 'Arquitetura', 'Produto'],
+    icon: 'users',
     tone: 'green',
-    categories: ['experiencia'],
     featured: true,
   },
   {
-    period: '2020 – atual',
+    period: '2026 – atual',
     title: 'Professora',
-    subtitle: 'Graduação em TI',
+    subtitle: 'Graduação em Inteligência Artificial',
     description: [
-      'Ensino de algoritmos, estrutura de dados, Python e IA. Criação de materiais, exercícios e projetos práticos para o aprendizado.',
+      'Aulas de estrutura de dados e programação em Python, com materiais, exemplos e visualizações interativas para os alunos.',
     ],
-    tags: ['Educação', 'Python', 'Estrutura de Dados', 'Machine Learning'],
+    tags: ['Educação', 'Estrutura de Dados', 'Python'],
     icon: 'book',
     tone: 'lime',
-    categories: ['professora'],
     featured: true,
   },
+];
+
+/* ------------------------------------------------------------------ */
+/* Conquistas                                                           */
+/* ------------------------------------------------------------------ */
+
+export interface Badge {
+  title: string;
+  issuer: string;
+  /** Ex.: "fev. 2025". */
+  date?: string;
+  /** Imagem em public/images. */
+  image: string;
+  /** Página pública da credencial; sem link, mostra só a imagem. */
+  url?: string;
+}
+
+/** Certificações e programas, exibidos com a imagem do badge. */
+export const badges: Badge[] = [
+  {
+    title: 'AWS Certified Solutions Architect – Associate',
+    issuer: 'Amazon Web Services',
+    date: 'fev. 2025',
+    image: '/images/badge-aws-solutions-architect.webp',
+    url: 'https://www.credly.com/badges/b01cb073-4339-4eab-baec-bfe5c75220a0/public_url',
+  },
+  {
+    title: 'AWS Certified AI Practitioner',
+    issuer: 'Amazon Web Services',
+    date: 'fev. 2025',
+    image: '/images/badge-aws-ai-practitioner.webp',
+    url: 'https://www.credly.com/badges/8b4e5098-bc91-426f-8302-57daf59032c3/public_url',
+  },
+  {
+    title: 'AWS Certified AI Practitioner Early Adopter',
+    issuer: 'Amazon Web Services',
+    image: '/images/badge-aws-ai-practitioner-early-adopter.webp',
+    url: 'https://www.credly.com/badges/745945f6-6053-4fc2-9231-29ac59eba28b/public_url',
+  },
+  {
+    title: 'AWS Educate Getting Started with Networking',
+    issuer: 'Amazon Web Services',
+    image: '/images/badge-aws-educate-networking.webp',
+    url: 'https://www.credly.com/badges/b4e161e0-b8a1-4cf6-ad7c-fd68020b894e/public_url',
+  },
+  {
+    title: 'M365 Copilot Expert',
+    issuer: 'Itaú · iox hub OIA',
+    image: '/images/badge-m365-copilot-expert.webp',
+  },
+  {
+    title: 'M365 Copilot Trained',
+    issuer: 'Itaú · iox hub OIA',
+    image: '/images/badge-m365-copilot-trained.webp',
+  },
+  {
+    title: 'Programa Tecnicidade Feminina – Mentoradas',
+    issuer: 'Itaú · HubTech',
+    image: '/images/badge-tecnicidade-feminina.webp',
+  },
+];
+
+/** Reconhecimentos de alto desempenho (PRAD) no Itaú, do mais recente ao mais antigo. */
+export const recognitions = [
+  { title: 'High Performance Recognition (PRAD)', issuer: 'Banco Itaú', date: 'fev. 2025', year: '2025' },
+  { title: 'High Performance Recognition (PRAD)', issuer: 'Banco Itaú', date: 'fev. 2023', year: '2023' },
+  { title: 'High Performance Recognition (PRAD)', issuer: 'Banco Itaú', date: 'fev. 2022', year: '2022' },
 ];
 
 export const journeyNumbers: Array<{ icon: IconName; value: string; label: string; accent: Tone }> = [

@@ -3,6 +3,7 @@ import { Container } from '@/components/ui/primitives';
 import { profile } from '@/content/profile';
 import { JourneyNumbers, MainTechnologies } from '@/features/about/AboutHighlights';
 import { AboutHero } from '@/features/about/AboutHero';
+import { Achievements } from '@/features/about/Achievements';
 import { CareerTimeline } from '@/features/about/CareerTimeline';
 import { QuoteCard } from '@/features/portfolio/AboutSections';
 import styles from './AboutPage.module.css';
@@ -13,6 +14,7 @@ export default function AboutPage() {
       <PageMeta title="Sobre" description={`Quem é ${profile.name}: trajetória, tecnologias e valores.`} />
       <AboutHero />
       <CareerTimeline />
+      <Achievements />
       <div className={styles.highlights}>
         <JourneyNumbers />
         <MainTechnologies />

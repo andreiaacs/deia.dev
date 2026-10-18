@@ -83,8 +83,6 @@ export interface SideProject {
   href: string;
 }
 
-export type CareerCategory = 'formacao' | 'experiencia' | 'professora';
-
 /** Um marco da trajetória (página Sobre e resumo no Portfólio). */
 export interface CareerItem {
   period: string;
@@ -96,7 +94,6 @@ export interface CareerItem {
   tags: string[];
   icon: IconName;
   tone: Tone;
-  categories: CareerCategory[];
   /** Aparece também no resumo "Minha trajetória" do Portfólio. */
   featured?: boolean;
 }

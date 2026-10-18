@@ -6,7 +6,7 @@
 import { describe, expect, it } from 'vitest';
 import { conteudos } from './conteudos';
 import { posts } from './posts';
-import { career } from './profile';
+import { badges, career, recognitions } from './profile';
 import { featuredProjects } from './projects';
 
 const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
@@ -52,11 +52,23 @@ describe('blog e portfólio', () => {
   });
 });
 
+describe('conquistas', () => {
+  it('têm imagem, link válido e títulos únicos', () => {
+    const titles = badges.map((badge) => badge.title);
+    expect(new Set(titles).size).toBe(titles.length);
+    for (const badge of badges) {
+      expect(badge.image).toMatch(/^\/images\/.+\.webp$/);
+      if (badge.url) expect(badge.url).toMatch(/^https:\/\/www\.credly\.com\/badges\//);
+    }
+    expect(recognitions.length).toBeGreaterThan(0);
+  });
+});
+
 describe('trajetória', () => {
   it('tem itens completos e no máximo 5 em destaque no resumo', () => {
     for (const item of career) {
       expect(item.description.length, item.title).toBeGreaterThan(0);
-      expect(item.categories.length, item.title).toBeGreaterThan(0);
+      expect(item.tags.length, item.title).toBeGreaterThan(0);
     }
     expect(career.filter((item) => item.featured).length).toBeLessThanOrEqual(5);
   });

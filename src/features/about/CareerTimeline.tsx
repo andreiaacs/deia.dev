@@ -1,18 +1,11 @@
-import { useState } from 'react';
 import { Icon } from '@/components/ui/Icon';
 import { IconBadge, TagList } from '@/components/ui/primitives';
-import { about, career, careerFilters } from '@/content/profile';
-import type { CareerCategory } from '@/content/types';
+import { about, career } from '@/content/profile';
 import { cx } from '@/lib/cx';
 import styles from './CareerTimeline.module.css';
 
-type Filter = 'todos' | CareerCategory;
-
-/** Linha do tempo da carreira com filtro por tipo (experiência, formação, docência). */
+/** Linha do tempo da carreira, em ordem cronológica. */
 export function CareerTimeline() {
-  const [filter, setFilter] = useState<Filter>('todos');
-  const items = career.filter((item) => filter === 'todos' || item.categories.includes(filter));
-
   return (
     <section className={styles.section} aria-labelledby="minha-trajetoria">
       <div className={styles.header}>
@@ -22,24 +15,11 @@ export function CareerTimeline() {
           </h2>
           <p className={styles.summary}>{about.careerSummary}</p>
         </div>
-        <div className={styles.filters} role="group" aria-label="Filtrar trajetória">
-          {careerFilters.map((option) => (
-            <button
-              key={option.id}
-              type="button"
-              aria-pressed={filter === option.id}
-              className={cx(styles.filter, filter === option.id && styles.filterActive)}
-              onClick={() => setFilter(option.id)}
-            >
-              {option.label}
-            </button>
-          ))}
-        </div>
       </div>
 
       <ol className={styles.timeline}>
-        {items.map((item, index) => {
-          const isLast = index === items.length - 1;
+        {career.map((item, index) => {
+          const isLast = index === career.length - 1;
           return (
             <li key={item.period + item.title} className={styles.item}>
               <IconBadge icon={item.icon} tone={item.tone} size={52} className={styles.icon} />
